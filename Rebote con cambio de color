@@ -1,0 +1,46 @@
+//cuadro q cambia de color
+float posx=1;
+float velx = 7.5;
+int dirx=1;
+
+float posy=1;
+float vely = 1;
+int diry=1;
+
+void setup(){
+  
+  size(500,500);
+
+  }
+  
+void draw(){
+  background(249,210,0);
+  //background(random(0,255),255,0);
+ noStroke();
+  
+//velx= velx + 0.1;
+
+posx=posx+(velx*dirx);
+posy=posy+(vely*diry);
+
+fill(243,146,0);
+
+
+println(velx);
+
+if(posx>400 || posx<0){
+  dirx=dirx* -1;
+}
+if(posy>400 || posy<0){
+  diry=diry*-1;
+}
+if(posx > 0 && posx < 100){
+  fill(255,random(0,255),0);
+}
+if(posx > 300 && posx < 500){
+  fill(random(0,255),255,0);
+} 
+rect(posx,posy,posx,posy);
+fill(0,255,0);
+
+}
